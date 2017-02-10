@@ -1,14 +1,14 @@
-s3-key:
+
 aws-default-region: eu-west-2
 aws-access-key-id:
-aws-secret-access-key: 
-s3-bucket: maven-concourse-pipeline
+aws-secret-access-key:
+
 
 cf-api-url:
-cf-password:
-cf-user:
-cf-uaa-client-id:
-cf-uaa-client-secret:
+cf-admin-password:
+cf-admin-user:
+cf-uaa-admin-client-id:
+cf-uaa-admin-client-secret:
 cf-skip-ssl-validation:
 
 terraform-source-uri:

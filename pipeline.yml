@@ -26,15 +26,12 @@ jobs:
     file: pipeline-resource/tasks/terraform.yml
     input_mapping: {terraform-source: dev-terraform-resource, pipeline: pipeline-resource}
     params:
-      TF_VAR_S3_KEY: {{s3-key}}
       AWS_DEFAULT_REGION: {{aws-default-region}}
       AWS_ACCESS_KEY_ID: {{aws-access-key-id}}
       AWS_SECRET_ACCESS_KEY: {{aws-secret-access-key}}
-      TF_VAR_S3_BUCKET: {{s3-bucket}}
-      TF_VAR_CF_PASSWORD: {{cf-password}}
       TF_VAR_CF_API_URL: {{cf-api-url}}
-      TF_VAR_CF_PASSWORD: {{cf-password}}
-      TF_VAR_CF_USER: {{cf-user}}
-      TF_VAR_CF_UAA_CLIENT_ID: {{cf-uaa-client-id}}
-      TF_VAR_CF_UAA_CLIENT_SECRET: {{cf-uaa-client-secret}}
+      TF_VAR_CF_ADMIN_PASSWORD: {{cf-admin-password}}
+      TF_VAR_CF_ADMIN_USER: {{cf-admin-user}}
+      TF_VAR_CF_UAA_ADMIN_CLIENT_ID: {{cf-uaa-admin-client-id}}
+      TF_VAR_CF_UAA_ADMIN_CLIENT_SECRET: {{cf-uaa-admin-client-secret}}
       TF_VAR_CF_SKIP_SSL_VALIDATION: {{cf-skip-ssl-validation}}
