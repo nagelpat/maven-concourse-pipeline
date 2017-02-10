@@ -6,8 +6,7 @@ resources:
   source:
     uri: {{terraform-source-uri}}
     branch: {{terraform-source-branch}}
-    paths: {{terraform-source-path}}
-
+    
 - name: pipeline-resource
   type: git
   source:
