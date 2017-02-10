@@ -9,6 +9,7 @@ version:
 	terraform --help
 
 init:
+	env
 	@echo "initialize Terraform"
 	terraform init
 

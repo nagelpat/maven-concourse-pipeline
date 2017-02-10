@@ -6,7 +6,7 @@ resources:
   source:
     uri: {{terraform-source-uri}}
     branch: {{terraform-source-branch}}
-    
+
 - name: pipeline-resource
   type: git
   source:
@@ -26,15 +26,15 @@ jobs:
     file: pipeline-resource/tasks/terraform.yml
     input_mapping: {terraform-source: dev-terraform-resource, pipeline: pipeline-resource}
     params:
-      S3_KEY: {{s3-key}}
+      TF_VAR_S3_KEY: {{s3-key}}
       AWS_DEFAULT_REGION: {{aws-default-region}}
       AWS_ACCESS_KEY_ID: {{aws-access-key-id}}
       AWS_SECRET_ACCESS_KEY: {{aws-secret-access-key}}
-      S3_BUCKET: {{s3-bucket}}
-      CF_PASSWORD: {{cf-password}}
-      CF_API_URL: {{cf-api-url}}
-      CF_PASSWORD: {{cf-password}}
-      CF_USER: {{cf-user}}
-      CF_UAA_CLIENT_ID: {{cf-uaa-client-id}}
-      CF_UAA_CLIENT_SECRET: {{cf-uaa-client-secret}}
-      CF_SKIP_SSL_VALIDATION: {{cf-skip-ssl-validation}}
+      TF_VAR_S3_BUCKET: {{s3-bucket}}
+      TF_VAR_CF_PASSWORD: {{cf-password}}
+      TF_VAR_CF_API_URL: {{cf-api-url}}
+      TF_VAR_CF_PASSWORD: {{cf-password}}
+      TF_VAR_CF_USER: {{cf-user}}
+      TF_VAR_CF_UAA_CLIENT_ID: {{cf-uaa-client-id}}
+      TF_VAR_CF_UAA_CLIENT_SECRET: {{cf-uaa-client-secret}}
+      TF_VAR_CF_SKIP_SSL_VALIDATION: {{cf-skip-ssl-validation}}
