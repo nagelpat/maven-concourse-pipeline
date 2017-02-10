@@ -1,3 +1,4 @@
 credentials.yml
 target/*
 nohup.out
+bin/*

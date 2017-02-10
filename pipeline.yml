@@ -1,0 +1,41 @@
+---
+
+resources:
+- name: dev-terraform-resource
+  type: git
+  source:
+    uri: {{terraform-source-uri}}
+    branch: {{terraform-source-branch}}
+    paths: {{terraform-source-path}}
+
+- name: pipeline-resource
+  type: git
+  source:
+    uri: {{pipeline-source-uri}}
+    branch: {{pipeline-source-branch}}
+
+
+jobs:
+- name: provision-dev-infrastructure
+  serial: true
+  plan:
+  - get: dev-terraform-resource
+    trigger: true
+  - get: pipeline-resource
+    trigger: true
+  - task: plan-terraform
+    file: pipeline-resource/tasks/terraform.yml
+    input_mapping: {terraform-source: dev-terraform-resource, pipeline: pipeline-resource}
+    params:
+      S3_KEY: {{s3-key}}
+      AWS_DEFAULT_REGION: {{aws-default-region}}
+      AWS_ACCESS_KEY_ID: {{aws-access-key-id}}
+      AWS_SECRET_ACCESS_KEY: {{aws-secret-access-key}}
+      S3_BUCKET: {{s3-bucket}}
+      CF_PASSWORD: {{cf-password}}
+      CF_API_URL: {{cf-api-url}}
+      CF_PASSWORD: {{cf-password}}
+      CF_USER: {{cf-user}}
+      CF_UAA_CLIENT_ID: {{cf-uaa-client-id}}
+      CF_UAA_CLIENT_SECRET: {{cf-uaa-client-secret}}
+      CF_SKIP_SSL_VALIDATION: {{cf-skip-ssl-validation}}
