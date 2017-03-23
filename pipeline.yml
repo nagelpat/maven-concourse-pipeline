@@ -134,3 +134,47 @@ jobs:
   - put: candidate-artifact-resource
     params:
       file: install-artifact/*
+
+- name: increase-major
+  serial: true
+  plan:
+  - put: version-resource
+    params: { bump: major }
+
+- name: increase-minor
+  serial: true
+  plan:
+  - put: version-resource
+    params: { bump: minor }
+
+- name: increase-patch
+  serial: true
+  plan:
+  - put: version-resource
+    params: { bump: patch }
+
+- name: make-it-final
+  serial: true
+  plan:
+  - put: version-resource
+    params: { bump: final }
+
+- name: start-dev
+  serial: true
+  plan:
+  - put: version-resource
+    params: { pre: rc }
+
+groups:
+- name: build
+  jobs:
+  - job-build-and-verify
+  - job-deploy
+  - job-acceptance-test
+- name: versioning
+  jobs:
+  - increase-major
+  - increase-minor
+  - increase-patch
+  - make-it-final
+  - start-dev
