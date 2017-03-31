@@ -16,21 +16,30 @@ cat > ${HOME}/.m2/settings.xml <<EOF
       xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                           https://maven.apache.org/xsd/settings-1.0.0.xsd">
 
-      <mirrors>
-          <mirror>
-            <id>${M2_SETTINGS_REPO_ID}</id>
-            <mirrorOf>*</mirrorOf>
-            <url>${M2_SETTINGS_REPO_RELEASE_URI}</url>
-            <name>Artifactory</name>
-          </mirror>
-      </mirrors>
-       <servers>
-         <server>
-           <id>${M2_SETTINGS_REPO_ID}</id>
-           <username>${M2_SETTINGS_REPO_USERNAME}</username>
-           <password>${M2_SETTINGS_REPO_PASSWORD}</password>
-         </server>
-       </servers>
+<mirrors>
+    <mirror>
+      <id>UK</id>
+      <name>UK Central</name>
+      <url>http://uk.maven.org/maven2</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+  </mirrors>
+
+#      <mirrors>
+#          <mirror>
+#            <id>${M2_SETTINGS_REPO_ID}</id>
+#            <mirrorOf>*</mirrorOf>
+#            <url>${M2_SETTINGS_REPO_RELEASE_URI}</url>
+#            <name>Artifactory</name>
+#          </mirror>
+#      </mirrors>
+#       <servers>
+#         <server>
+#           <id>${M2_SETTINGS_REPO_ID}</id>
+#           <username>${M2_SETTINGS_REPO_USERNAME}</username>
+#           <password>${M2_SETTINGS_REPO_PASSWORD}</password>
+#         </server>
+#       </servers>
 
        <profiles>
          <profile>
