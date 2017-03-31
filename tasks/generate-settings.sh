@@ -16,14 +16,14 @@ cat > ${HOME}/.m2/settings.xml <<EOF
       xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                           https://maven.apache.org/xsd/settings-1.0.0.xsd">
 
-<mirrors>
-    <mirror>
-      <id>UK</id>
-      <name>UK Central</name>
-      <url>http://uk.maven.org/maven2</url>
-      <mirrorOf>central</mirrorOf>
-    </mirror>
-  </mirrors>
+#     <mirrors>
+#         <mirror>
+#           <id>UK</id>
+#           <name>UK Central</name>
+#           <url>http://uk.maven.org/maven2</url>
+#           <mirrorOf>central</mirrorOf>
+#         </mirror>
+#     </mirrors>
 
 #      <mirrors>
 #          <mirror>
@@ -41,22 +41,22 @@ cat > ${HOME}/.m2/settings.xml <<EOF
 #         </server>
 #       </servers>
 
-       <profiles>
-         <profile>
-           <id>artifactory</id>
-           <repositories>
-               <repository>
-                   <id>${M2_SETTINGS_REPO_ID}</id>
-                   <name>libs-release</name>
-                   <url>${M2_SETTINGS_REPO_RELEASE_URI}</url>
-               </repository>
-           </repositories>
-         </profile>
-       </profiles>
+#       <profiles>
+#         <profile>
+#           <id>artifactory</id>
+#           <repositories>
+#               <repository>
+#                   <id>${M2_SETTINGS_REPO_ID}</id>
+#                   <name>libs-release</name>
+#                   <url>${M2_SETTINGS_REPO_RELEASE_URI}</url>
+#               </repository>
+#           </repositories>
+#         </profile>
+#       </profiles>
 
-       <activeProfiles>
-         <activeProfile>artifactory</activeProfile>
-       </activeProfiles>
+#       <activeProfiles>
+#         <activeProfile>artifactory</activeProfile>
+#       </activeProfiles>
 
 </settings>
 
