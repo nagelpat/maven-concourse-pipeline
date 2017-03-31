@@ -16,15 +16,6 @@ cat > ${HOME}/.m2/settings.xml <<EOF
       xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                           https://maven.apache.org/xsd/settings-1.0.0.xsd">
 
-     <mirrors>
-         <mirror>
-           <id>UK</id>
-           <name>UK Central</name>
-           <url>http://uk.maven.org/maven2</url>
-           <mirrorOf>central</mirrorOf>
-         </mirror>
-     </mirrors>
- <!--
       <mirrors>
           <mirror>
             <id>${M2_SETTINGS_REPO_ID}</id>
@@ -56,7 +47,7 @@ cat > ${HOME}/.m2/settings.xml <<EOF
 
        <activeProfiles>
          <activeProfile>artifactory</activeProfile>
-       </activeProfiles> --!>
+       </activeProfiles>
 </settings>
 
 EOF
